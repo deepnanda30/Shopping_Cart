@@ -98,6 +98,10 @@ increment=(id) =>{
       });
       const index = Cart.indexOf(selectedProduct);
       const product = Cart[index];
+      if(product.count===0)
+      {
+        return;
+      }
       product.count = product.count - 1;
       product.total = product.count * product.cost;
       this.setState(() => {
